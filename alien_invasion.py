@@ -18,7 +18,7 @@ def run_game():
     ship = Ship(screen)
 
     while True:
-        gf.check_events()
+        gf.check_events(ship)
         # 每次循环时都重绘屏幕
         gf.update_screeen(ai_settings, screen, ship)
 
