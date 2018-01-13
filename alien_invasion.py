@@ -20,6 +20,7 @@ def run_game():
     while True:
         gf.check_events(ship)
         # 每次循环时都重绘屏幕
+        ship.update()
         gf.update_screeen(ai_settings, screen, ship)
 
         # 让最近绘制的屏幕可见
