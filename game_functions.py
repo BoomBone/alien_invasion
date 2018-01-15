@@ -155,7 +155,7 @@ def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
         stats.ships_left -= 1
         # 清空外星人列表和子弹列表
         aliens.empty()
-        bullets.empty
+        bullets.empty()
         # 创建一群新的外星人，并将飞船放到屏幕底端中央
         create_fleet(ai_settings, screen, ship, aliens)
         ship.center_ship()

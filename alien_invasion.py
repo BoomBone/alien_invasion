@@ -27,11 +27,12 @@ def run_game():
 
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)
-        # 每次循环时都重绘屏幕
-        ship.update()
-        gf.upadte_bullets(ai_settings, screen, ship, aliens, bullets)
-        gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
-        # print(len(bullets))
+        if stats.game_active:
+            # 每次循环时都重绘屏幕
+            ship.update()
+            gf.upadte_bullets(ai_settings, screen, ship, aliens, bullets)
+            gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
+            # print(len(bullets))
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
 
