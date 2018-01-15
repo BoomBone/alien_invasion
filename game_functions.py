@@ -104,3 +104,8 @@ def get_number_rows(ai_settings, ship_height, alien_height):
                          (3 * alien_height) - ship_height)
     number_rows = int(available_space_y / (2 * alien_height))
     return number_rows
+
+
+def update_aliens(aliens):
+    """更新外星人群中所有外星人的位置"""
+    aliens.update()
