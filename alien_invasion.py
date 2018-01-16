@@ -7,6 +7,7 @@ from ship import Ship
 from alien import Alien
 import game_functions as gf
 from pygame.sprite import Group
+from button import Button
 
 
 def run_game():
@@ -16,6 +17,8 @@ def run_game():
         (ai_settings.screen_width, ai_settings.screen_height)
     )
     pygame.display.set_caption("Alien Invasion")
+    # 创建Play按钮
+    play_button = Button(ai_settings, screen, "Play")
     # 创建一艘飞船、一个外星人、一个子弹编组和一个外星人编组
     ship = Ship(ai_settings, screen)
     bullets = Group()
@@ -33,7 +36,8 @@ def run_game():
             gf.upadte_bullets(ai_settings, screen, ship, aliens, bullets)
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
             # print(len(bullets))
-        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
+        gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets,
+                         play_button)
 
 
 run_game()
