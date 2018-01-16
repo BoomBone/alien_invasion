@@ -45,6 +45,8 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens,
     """在玩家单机Play按钮时开始新游戏"""
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked and not stats.game_active:
+        # 隐藏光标
+        pygame.mouse.set_visible(False)
         # 重置游戏信息
         stats.reset_stats()
         stats.game_active = True
@@ -189,6 +191,7 @@ def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
         sleep(0.5)
     else:
         stats.game_active = False
+        pygame.mouse.set_visible(True)
 
 
 def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
