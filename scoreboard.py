@@ -1,4 +1,4 @@
-import pygame
+import pygame.font
 
 
 class Scoreboard():
@@ -26,7 +26,7 @@ class Scoreboard():
 
         # 将得分放在屏幕右上角
         self.score_rect = self.score_image.get_rect()
-        self.score_rect.right = self.score_rect.right - 20
+        self.score_rect.right = self.screen_rect.right - 20
         self.score_rect.top = 20
 
     def show_score(self):
