@@ -20,7 +20,8 @@ class Scoreboard():
 
     def prep_score(self):
         """将得分转换为一幅渲染的图像"""
-        score_str = str(self.stats.score)
+        rouned_score = int(round(self.stats.score, -1))
+        score_str = "{:,}".format(rouned_score)
         self.score_image = self.font.render(score_str, True, self.text_color,
                                             self.ai_settings.bg_color)
 
